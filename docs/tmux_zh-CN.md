@@ -15,6 +15,7 @@ tmux 3.3+，单层：本地终端 → ssh → tmux。prefix 是 `C-b`。
 | `c` / `1`…`9` / `X` | 新窗口 / 跳到窗口 / 关闭窗口 |
 | `[` / `]` | 上一个 / 下一个 session |
 | `N` / `w` | 新建 session / session 和窗口树 |
+| `P` | 粘贴最近一次复制的内容 |
 | `v` | copy mode：`v` 选择，`C-v` 块选择，`y` 复制，`H` / `L` 行首 / 行尾 |
 | `e` | 用 vim 打开当前 pane 的完整 scrollback |
 | `q` / `d` | detach |

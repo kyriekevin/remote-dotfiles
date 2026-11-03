@@ -15,6 +15,7 @@ tmux 3.3+, one layer: local terminal → ssh → tmux. Prefix is `C-b`.
 | `c` / `1`…`9` / `X` | new window / go to window / kill window |
 | `[` / `]` | previous / next session |
 | `N` / `w` | new session / session and window tree |
+| `P` | paste the latest tmux buffer |
 | `v` | copy mode: `v` select, `C-v` block, `y` copy, `H` / `L` line start / end |
 | `e` | open the pane's full scrollback in vim |
 | `q` / `d` | detach |
