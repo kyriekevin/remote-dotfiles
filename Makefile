@@ -8,6 +8,7 @@ verify: lint
 
 lint:
 	$(PRE_COMMIT) run --all-files --show-diff-on-failure
+	$(PRE_COMMIT) run --hook-stage manual gitleaks-history
 
 # Install the pre-commit and commit-msg git hooks (needs: uv tool install pre-commit).
 hooks:
