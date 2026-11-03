@@ -27,5 +27,6 @@ tmux/tmux.conf      main config, linked to ~/.tmux.conf
 tmux/theme.conf     catppuccin theme, loaded only when the plugin is installed
 tmux/plugins.txt    pinned plugins
 tmux/bin/           status bar helper
+tests/              package tests, run by `make test` and CI
 docs/               per-package guides
 ```

@@ -27,5 +27,6 @@ tmux/tmux.conf      主配置，软链到 ~/.tmux.conf
 tmux/theme.conf     catppuccin 主题，仅在插件已安装时加载
 tmux/plugins.txt    固定版本的插件
 tmux/bin/           状态栏辅助脚本
+tests/              各个包的测试，由 `make test` 和 CI 运行
 docs/               各个包的说明
 ```
