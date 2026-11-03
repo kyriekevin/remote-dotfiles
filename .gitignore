@@ -1,0 +1,2 @@
+# Plugins are fetched by install.sh from */plugins.txt, never vendored.
+/tmux/plugins/

@@ -25,3 +25,17 @@ jobs:
         with:
           version: "0.13.7"
       - run: make lint
+
+  tmux:
+    # Same distro and tmux version (3.3a) as the cluster machines.
+    runs-on: ubuntu-latest
+    container: debian:bookworm
+    timeout-minutes: 10
+    steps:
+      - name: Install tmux and git
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends tmux git ca-certificates make
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - run: tmux -V
+      - run: make test
