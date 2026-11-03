@@ -1,5 +1,5 @@
 # Shared by local hooks and CI (`make lint`).
-# Setup once: pre-commit install   (installs pre-commit and commit-msg hooks)
+# Setup once: uv tool install pre-commit && make hooks
 default_install_hook_types: [pre-commit, commit-msg]
 
 repos:

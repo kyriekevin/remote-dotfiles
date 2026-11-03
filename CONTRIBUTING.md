@@ -5,8 +5,8 @@
 ## Setup
 
 ```bash
-pip install pre-commit   # or: uv tool install pre-commit
-pre-commit install       # pre-commit and commit-msg hooks
+uv tool install pre-commit
+make hooks               # installs the pre-commit and commit-msg git hooks
 ```
 
 ## Workflow

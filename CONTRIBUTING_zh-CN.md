@@ -5,8 +5,8 @@
 ## 准备
 
 ```bash
-pip install pre-commit   # 或：uv tool install pre-commit
-pre-commit install       # 安装 pre-commit 和 commit-msg hooks
+uv tool install pre-commit
+make hooks               # 安装 pre-commit 和 commit-msg 两个 git hook
 ```
 
 ## 流程
