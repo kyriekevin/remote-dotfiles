@@ -1,0 +1,15 @@
+#!/bin/sh
+# Status bar helper.
+#   tmux-status gpu    average GPU utilisation, e.g. "88%" (nothing if no GPU)
+#   tmux-status time   local time; zone $REMOTE_DOTFILES_TZ, default Asia/Singapore
+#   tmux-status        both, for the plain (no catppuccin) status bar
+gpu() {
+  timeout 2 nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits 2>/dev/null |
+    awk '/^[0-9]+$/ {u += $1; n++} END {if (n) printf "%d%%", u / n}'
+}
+now() { TZ="${REMOTE_DOTFILES_TZ:-Asia/Singapore}" date +%H:%M; }
+case "${1:-}" in
+  gpu)  gpu ;;
+  time) now ;;
+  *)    g=$(gpu); [ -n "$g" ] && printf 'GPU %s  ' "$g"; now ;;
+esac
