@@ -58,11 +58,17 @@ common_checks() {
   got=$(tmux -L "$s" show -sv escape-time)
   if [ "$got" -le 10 ]; then pass "escape-time = $got"; else fail "escape-time = $got"; fi
 
-  for key in '|' - h j k l H J K L '[' ']' N P q X v e R; do
+  for key in '|' - h j k l H J K L N q X e R; do
     if tmux -L "$s" list-keys -T prefix "$key" >/dev/null 2>&1; then :
     else fail "prefix $key is not bound"; return; fi
   done
   pass "prefix bindings present"
+  # tmux defaults that must keep their meaning.
+  for opt in "[ copy-mode" "] paste-buffer" "( switch-client -p" ") switch-client -n"; do
+    if tmux -L "$s" list-keys -T prefix "${opt%% *}" | grep -qF -- "${opt#* }"; then
+      pass "prefix ${opt%% *} = ${opt#* }"
+    else fail "prefix ${opt%% *} is not ${opt#* }"; fi
+  done
 }
 
 echo "== status helper"
